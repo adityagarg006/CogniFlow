@@ -1,0 +1,78 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="260" y="15" width="380" height="55" rx="15" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="1"/>
+  <text x="450" y="45" text-anchor="middle" font-size="16" font-weight="700" fill="#1F2937">Hybrid scorer flags n paragraphs</text>
+
+  <line x1="450" y1="70" x2="450" y2="102" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="210" y="107" width="480" height="52" rx="10" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+  <text x="450" y="128" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E">Sort by composite score (hardest first)</text>
+  <text x="450" y="147" text-anchor="middle" font-size="11" fill="#B45309">Split at position MAX_AUTO_SIMPLIFY = k</text>
+
+  <path d="M310 159 L140 159 L140 210" fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#a)"/>
+  <path d="M590 159 L760 159 L760 210" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="195" y="186" font-size="11" fill="#6B7280">Positions k to n</text>
+  <text x="620" y="186" font-size="11" fill="#6B7280">Positions 1 to k</text>
+
+  <rect x="25" y="215" width="380" height="350" rx="14" fill="#F0FDF4" stroke="#059669" stroke-width="1.2" stroke-dasharray="6 3"/>
+  <text x="215" y="242" text-anchor="middle" font-size="16" font-weight="700" fill="#065F46">Tier A: client-side</text>
+  <text x="215" y="264" text-anchor="middle" font-size="12" fill="#059669">24 paragraphs  |  0 API calls  |  &lt;2ms each</text>
+
+  <rect x="45" y="285" width="340" height="38" rx="7" fill="#ECFDF5" stroke="#059669" stroke-width="0.6"/>
+  <text x="215" y="309" text-anchor="middle" font-size="12" fill="#047857">Split long sentences at conjunction points</text>
+
+  <rect x="45" y="332" width="340" height="38" rx="7" fill="#ECFDF5" stroke="#059669" stroke-width="0.6"/>
+  <text x="215" y="356" text-anchor="middle" font-size="12" fill="#047857">Jargon tooltips from 500-term local dictionary</text>
+
+  <rect x="45" y="379" width="340" height="38" rx="7" fill="#ECFDF5" stroke="#059669" stroke-width="0.6"/>
+  <text x="215" y="403" text-anchor="middle" font-size="12" fill="#047857">Visual chunking (ADHD: space every 2-3 sentences)</text>
+
+  <rect x="45" y="426" width="340" height="38" rx="7" fill="#EDE9FE" stroke="#7C3AED" stroke-width="0.6"/>
+  <text x="215" y="450" text-anchor="middle" font-size="12" fill="#5B21B6">"Simplify this" button attached (Tier C trigger)</text>
+
+  <rect x="45" y="473" width="340" height="38" rx="7" fill="#ECFDF5" stroke="#059669" stroke-width="0.6"/>
+  <text x="215" y="497" text-anchor="middle" font-size="12" fill="#047857">Original DOM preserved via DocumentFragment</text>
+
+  <rect x="495" y="215" width="380" height="350" rx="14" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.2" stroke-dasharray="6 3"/>
+  <text x="685" y="242" text-anchor="middle" font-size="16" font-weight="700" fill="#7F1D1D">Tier B: server AI</text>
+  <text x="685" y="264" text-anchor="middle" font-size="12" fill="#DC2626">5 paragraphs  |  hard-capped  |  batched REST</text>
+
+  <rect x="515" y="285" width="340" height="38" rx="7" fill="#FEF2F2" stroke="#DC2626" stroke-width="0.6"/>
+  <text x="685" y="309" text-anchor="middle" font-size="12" fill="#991B1B">Full LLM rewrite at target grade level</text>
+
+  <rect x="515" y="332" width="340" height="38" rx="7" fill="#FEF2F2" stroke="#DC2626" stroke-width="0.6"/>
+  <text x="685" y="356" text-anchor="middle" font-size="12" fill="#991B1B">TL;DR summary generation (ADHD profile only)</text>
+
+  <rect x="515" y="379" width="340" height="38" rx="7" fill="#F3F4F6" stroke="#6B7280" stroke-width="0.6"/>
+  <text x="685" y="403" text-anchor="middle" font-size="12" fill="#374151">Tone analysis (rule-based, 0 API calls)</text>
+
+  <rect x="515" y="426" width="340" height="38" rx="7" fill="#ECFDF5" stroke="#059669" stroke-width="0.6"/>
+  <text x="685" y="450" text-anchor="middle" font-size="12" fill="#065F46">Progressive disclosure wraps the result</text>
+
+  <rect x="515" y="473" width="340" height="38" rx="7" fill="#F3F4F6" stroke="#6B7280" stroke-width="0.6"/>
+  <text x="685" y="497" text-anchor="middle" font-size="12" fill="#374151">Content-hash cached (SHA256, 24hr TTL)</text>
+
+  <line x1="215" y1="565" x2="215" y2="600" stroke="#7C3AED" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="685" y1="565" x2="685" y2="600" stroke="#059669" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="55" y="607" width="320" height="82" rx="12" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+  <text x="215" y="632" text-anchor="middle" font-size="15" font-weight="700" fill="#4C1D95">Tier C: on-demand</text>
+  <text x="215" y="652" text-anchor="middle" font-size="11" fill="#6D28D9">User clicks "Simplify this" on any Tier A paragraph</text>
+  <text x="215" y="670" text-anchor="middle" font-size="11" fill="#6D28D9">1 API call per click  |  serialized request queue</text>
+  <text x="215" y="684" text-anchor="middle" font-size="10" font-weight="600" fill="#7C3AED">Max 1 concurrent API call guaranteed</text>
+
+  <rect x="525" y="607" width="320" height="82" rx="12" fill="#ECFDF5" stroke="#059669" stroke-width="1"/>
+  <text x="685" y="632" text-anchor="middle" font-size="15" font-weight="700" fill="#065F46">Learning layer</text>
+  <text x="685" y="652" text-anchor="middle" font-size="11" fill="#047857">Tracks accept (stay on simplified) vs. revert (show original)</text>
+  <text x="685" y="670" text-anchor="middle" font-size="11" fill="#047857">Per domain + content category (science, news, legal...)</text>
+  <text x="685" y="684" text-anchor="middle" font-size="10" font-weight="600" fill="#059669">Revert rate &gt; 60% after 5 samples → stop simplifying</text>
+
+  <line x1="375" y1="648" x2="523" y2="648" stroke="#6B7280" stroke-width="1" marker-end="url(#a)"/>
+
+  </svg>

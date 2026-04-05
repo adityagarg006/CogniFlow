@@ -233,11 +233,11 @@ Handles **Tier A** (client-side text intervention with zero API calls) and the *
 
 <!--
 **Request queue state machine:**
-
-<p align="center">
-  <img src="docs/diagrams/request-queue.svg" alt="Request Queue State Machine" width="100%">
-</p>
 -->
+<p align="center">
+  <img src="docs/diagrams/three_tier_pyramid.svg" alt="Three Tier Architecture" width="100%">
+</p>
+
 Three states: `IDLE` (buttons enabled), `TIER_B_PROCESSING` (all buttons show "Waiting...", pulsing animation), `USER_REQUEST` (active button shows "Simplifying...", others show "Queued..."). Guarantees **max 1 concurrent API call** at all times, causing no server flood possible.
 
 
