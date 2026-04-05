@@ -1,0 +1,137 @@
+
+.cogniflow-disclosure-wrapper {
+  position: relative;
+  margin: 0.5em 0;
+  padding: 0;
+  border-left: 3px solid #7F77DD;
+  border-radius: 0 6px 6px 0;
+  background: rgba(127, 119, 221, 0.03);
+  transition: background 0.2s ease;
+}
+
+.cogniflow-disclosure-wrapper:hover {
+  background: rgba(127, 119, 221, 0.06);
+}
+
+.cogniflow-tldr {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(127, 119, 221, 0.06);
+  border-bottom: 1px solid rgba(127, 119, 221, 0.1);
+  font-size: 0.88em;
+  line-height: 1.6;
+}
+
+.cogniflow-tldr-label {
+  display: inline-block;
+  padding: 1px 6px;
+  background: #7F77DD;
+  color: white;
+  border-radius: 3px;
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cogniflow-tldr-content {
+  color: inherit;
+  opacity: 0.85;
+}
+
+.cogniflow-simplified {
+  padding: 10px 14px;
+  position: relative;
+}
+
+.cogniflow-badge {
+  display: inline-block;
+  padding: 1px 6px;
+  background: rgba(127, 119, 221, 0.12);
+  color: #7F77DD;
+  border-radius: 3px;
+  font-size: 0.7em;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+
+.cogniflow-simplified-content {
+  line-height: 1.7;
+}
+
+.cogniflow-original {
+  border-top: 1px solid rgba(127, 119, 221, 0.1);
+}
+
+.cogniflow-original-toggle {
+  display: block;
+  padding: 6px 14px;
+  font-size: 0.8em;
+  color: #7F77DD;
+  cursor: pointer;
+  user-select: none;
+  list-style: none; 
+  transition: background 0.15s ease;
+}
+
+.cogniflow-original-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.cogniflow-original-toggle::before {
+  content: "▸ ";
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+.cogniflow-original[open] .cogniflow-original-toggle::before {
+  transform: rotate(90deg);
+}
+
+.cogniflow-original-toggle:hover {
+  background: rgba(127, 119, 221, 0.06);
+}
+
+.cogniflow-original-content {
+  padding: 8px 14px 12px;
+  font-size: 0.92em;
+  opacity: 0.7;
+  line-height: 1.6;
+  border-top: 1px dashed rgba(127, 119, 221, 0.1);
+}
+
+html.cogniflow-adhd .cogniflow-disclosure-wrapper {
+  border-left-color: #7F77DD;
+}
+
+html.cogniflow-autism .cogniflow-disclosure-wrapper {
+  border-left-color: #1D9E75;
+  background: rgba(29, 158, 117, 0.02);
+}
+
+html.cogniflow-autism .cogniflow-badge {
+  background: rgba(29, 158, 117, 0.12);
+  color: #1D9E75;
+}
+
+html.cogniflow-dyslexia .cogniflow-disclosure-wrapper {
+  border-left-color: #D85A30;
+  background: rgba(216, 90, 48, 0.02);
+}
+
+html.cogniflow-dyslexia .cogniflow-badge {
+  background: rgba(216, 90, 48, 0.12);
+  color: #D85A30;
+}
+
+html.cogniflow-dyslexia .cogniflow-simplified-content {
+  font-family: 'OpenDyslexic', -apple-system, 'Segoe UI', Verdana, sans-serif !important;
+  line-height: 2.0 !important;
+  letter-spacing: 0.05em !important;
+}

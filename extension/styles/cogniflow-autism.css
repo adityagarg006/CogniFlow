@@ -1,0 +1,85 @@
+
+html.cogniflow-autism {
+  filter: saturate(0.65) !important; 
+}
+
+html.cogniflow-autism img,
+html.cogniflow-autism video,
+html.cogniflow-autism canvas,
+html.cogniflow-autism svg {
+  filter: saturate(1.54) !important; 
+}
+
+html.cogniflow-autism *,
+html.cogniflow-autism *::before,
+html.cogniflow-autism *::after {
+  animation-duration: 0.001s !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001s !important;
+  scroll-behavior: auto !important;
+}
+
+html.cogniflow-autism *:hover {
+  transform: none !important;
+  filter: none !important;
+}
+
+html.cogniflow-autism a:hover {
+  text-decoration: underline !important;
+}
+
+html.cogniflow-autism img {
+  aspect-ratio: attr(width) / attr(height) !important;
+}
+
+html.cogniflow-autism *[style*="position: fixed"],
+html.cogniflow-autism *[style*="position: sticky"] {
+  position: relative !important;
+}
+
+html.cogniflow-autism video[autoplay],
+html.cogniflow-autism audio[autoplay] {
+  display: none !important;
+}
+
+html.cogniflow-autism main p,
+html.cogniflow-autism article p,
+html.cogniflow-autism [role="main"] p {
+  line-height: 1.9 !important;
+  letter-spacing: 0.01em !important;
+  max-width: 65ch !important;
+}
+
+html.cogniflow-autism *[class*="blink"],
+html.cogniflow-autism *[class*="pulse"],
+html.cogniflow-autism *[class*="flash"],
+html.cogniflow-autism *[class*="shake"],
+html.cogniflow-autism *[class*="bounce"] {
+  animation: none !important;
+  opacity: 1 !important;
+}
+
+html.cogniflow-autism * {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+html.cogniflow-autism main,
+html.cogniflow-autism article,
+html.cogniflow-autism .card,
+html.cogniflow-autism [class*="card"] {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+html.cogniflow-autism [class*="chat-widget"],
+html.cogniflow-autism [class*="chatbot"],
+html.cogniflow-autism [class*="intercom"],
+html.cogniflow-autism [class*="drift"],
+html.cogniflow-autism [class*="zendesk"],
+html.cogniflow-autism [class*="crisp"],
+html.cogniflow-autism [class*="tawk"],
+html.cogniflow-autism [id*="chat-widget"],
+html.cogniflow-autism [class*="notification-popup"],
+html.cogniflow-autism [class*="toast"] {
+  display: none !important;
+}

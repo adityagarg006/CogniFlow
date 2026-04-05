@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CogniFlow</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 12C8 9.79 9.79 8 12 8M16 12C16 14.21 14.21 16 12 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="2" fill="currentColor"/>
+        </svg>
+        <span class="logo-text">CogniFlow</span>
+      </div>
+      <button id="power-btn" class="power-btn" title="Toggle extension">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M8 1v6M4.2 3.2A6 6 0 1011.8 3.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- CAS Score Display -->
+    <div class="cas-section" id="cas-section">
+      <div class="cas-before">
+        <span class="cas-label">Before</span>
+        <span class="cas-value" id="cas-before">--</span>
+      </div>
+      <div class="cas-arrow">→</div>
+      <div class="cas-after">
+        <span class="cas-label">After</span>
+        <span class="cas-value" id="cas-after">--</span>
+      </div>
+    </div>
+
+    <!-- Profile Selection -->
+    <div class="profiles-section">
+      <h3 class="section-title">Cognitive profiles</h3>
+      <div class="profile-cards">
+        <label class="profile-card" data-profile="adhd">
+          <input type="checkbox" name="profile" value="adhd">
+          <div class="profile-icon" style="--accent: #7F77DD">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M4 10h12M10 4v12M6 6l8 8M14 6l-8 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+              <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <span class="profile-name">ADHD</span>
+          <span class="profile-desc">Focus mode</span>
+        </label>
+
+        <label class="profile-card" data-profile="autism">
+          <input type="checkbox" name="profile" value="autism">
+          <div class="profile-icon" style="--accent: #1D9E75">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="profile-name">Autism</span>
+          <span class="profile-desc">Calm mode</span>
+        </label>
+
+        <label class="profile-card" data-profile="dyslexia">
+          <input type="checkbox" name="profile" value="dyslexia">
+          <div class="profile-icon" style="--accent: #D85A30">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M4 15V5h4.5a3 3 0 010 6H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 11h1a3.5 3.5 0 010 7H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+            </svg>
+          </div>
+          <span class="profile-name">Dyslexia</span>
+          <span class="profile-desc">Read mode</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-section" id="stats-section">
+      <div class="stat-row">
+        <span class="stat-label">Elements fixed</span>
+        <span class="stat-value" id="stat-fixed">0</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Text simplified</span>
+        <span class="stat-value" id="stat-simplified">0</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Backend</span>
+        <span class="stat-value" id="stat-backend">
+          <span class="status-dot offline"></span> Checking...
+        </span>
+      </div>
+    </div>
+
+    <!-- Sensing Profile (advanced) -->
+    <details class="sensing-section">
+      <summary class="section-title clickable">Behavioral signals ▸</summary>
+      <div class="sensing-data" id="sensing-data">
+        <p class="sensing-hint">Signals build as you browse this page.</p>
+      </div>
+    </details>
+
+    <!-- Backend URL Config -->
+    <details class="config-section">
+      <summary class="section-title clickable">Settings ▸</summary>
+      <div class="config-form">
+        <label class="config-label">
+          Backend URL
+          <input type="text" id="backend-url" placeholder="http://localhost:8000" class="config-input">
+        </label>
+        <button id="reset-learning-btn" class="btn-small btn-danger">Reset learning data</button>
+      </div>
+    </details>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span>CogniFlow v1.0.0</span>
+      <a href="#" id="revert-link">Revert all changes</a>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

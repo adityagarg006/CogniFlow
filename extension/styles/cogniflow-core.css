@@ -1,0 +1,54 @@
+
+html.cogniflow-active {
+  scroll-behavior: smooth !important;
+}
+
+html.cogniflow-active body {
+  overflow-x: hidden !important;
+}
+
+html.cogniflow-active *[style*="scroll-snap"] {
+  scroll-snap-type: none !important;
+}
+
+[data-cogniflow-hidden="true"] {
+  display: none !important;
+}
+
+.cogniflow-wall-of-text {
+  position: relative;
+}
+
+.cogniflow-wall-of-text::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #EF9F27;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+.cogniflow-high-complexity {
+  position: relative;
+}
+
+.cogniflow-high-complexity::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: 4px;
+  width: 6px;
+  height: 6px;
+  background: #D85A30;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+html.cogniflow-active [data-cogniflow-hidden],
+html.cogniflow-active [data-cogniflow-deanimated],
+html.cogniflow-active [data-cogniflow-destickied] {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}

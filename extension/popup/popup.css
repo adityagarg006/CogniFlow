@@ -1,0 +1,360 @@
+/* CogniFlow Popup Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 320px;
+  font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
+  font-size: 13px;
+  color: #1a1a1a;
+  background: #fafaf8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.popup-container {
+  padding: 16px;
+}
+
+/* ─── Header ───────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #7F77DD;
+}
+
+.logo-text {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.power-btn {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid #d4d4d0;
+  border-radius: 8px;
+  background: white;
+  color: #888;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.power-btn:hover {
+  border-color: #7F77DD;
+  color: #7F77DD;
+  background: rgba(127, 119, 221, 0.04);
+}
+
+.power-btn.active {
+  background: #7F77DD;
+  border-color: #7F77DD;
+  color: white;
+}
+
+/* ─── CAS Score ────────────────────────────────────────────────── */
+.cas-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 14px;
+  background: white;
+  border: 1px solid #e8e8e4;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.cas-before, .cas-after {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.cas-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #999;
+  font-weight: 500;
+}
+
+.cas-value {
+  font-size: 28px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.cas-before .cas-value { color: #E24B4A; }
+.cas-after .cas-value { color: #1D9E75; }
+
+.cas-value.neutral { color: #999; }
+
+.cas-arrow {
+  font-size: 20px;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* ─── Profile Cards ────────────────────────────────────────────── */
+.section-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #999;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.profile-cards {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.profile-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  background: white;
+  border: 1.5px solid #e8e8e4;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+
+.profile-card:hover {
+  border-color: var(--accent, #7F77DD);
+  background: rgba(127, 119, 221, 0.02);
+}
+
+.profile-card:has(input:checked) {
+  border-color: var(--accent, #7F77DD);
+  background: rgba(127, 119, 221, 0.06);
+  box-shadow: 0 0 0 1px var(--accent, #7F77DD);
+}
+
+.profile-card input {
+  display: none;
+}
+
+.profile-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(127, 119, 221, 0.08);
+  color: var(--accent, #7F77DD);
+}
+
+.profile-card:has(input:checked) .profile-icon {
+  background: var(--accent, #7F77DD);
+  color: white;
+}
+
+.profile-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+.profile-desc {
+  font-size: 10px;
+  color: #999;
+}
+
+/* ─── Stats ────────────────────────────────────────────────────── */
+.stats-section {
+  padding: 12px;
+  background: white;
+  border: 1px solid #e8e8e4;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.stat-row + .stat-row {
+  border-top: 1px solid #f2f2f0;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #777;
+}
+
+.stat-value {
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.online { background: #1D9E75; }
+.status-dot.offline { background: #E24B4A; }
+.status-dot.checking { background: #EF9F27; }
+
+/* ─── Sensing & Config Sections ────────────────────────────────── */
+.sensing-section, .config-section {
+  margin-bottom: 8px;
+}
+
+.section-title.clickable {
+  cursor: pointer;
+  padding: 8px 0;
+  user-select: none;
+}
+
+.sensing-data {
+  padding: 10px 12px;
+  background: white;
+  border: 1px solid #e8e8e4;
+  border-radius: 8px;
+  font-size: 11px;
+  color: #666;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+.sensing-hint {
+  font-style: italic;
+  color: #aaa;
+}
+
+.sensing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 12px;
+}
+
+.sensing-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sensing-item-label {
+  color: #888;
+}
+
+.sensing-item-value {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.config-form {
+  padding: 10px 12px;
+  background: white;
+  border: 1px solid #e8e8e4;
+  border-radius: 8px;
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.config-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  color: #777;
+}
+
+.config-input {
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: 'SF Mono', 'Consolas', monospace;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.config-input:focus {
+  border-color: #7F77DD;
+}
+
+.btn-small {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-danger {
+  color: #E24B4A;
+  border-color: rgba(226, 75, 74, 0.3);
+}
+
+.btn-danger:hover {
+  background: rgba(226, 75, 74, 0.06);
+  border-color: #E24B4A;
+}
+
+/* ─── Footer ───────────────────────────────────────────────────── */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  margin-top: 8px;
+  border-top: 1px solid #eee;
+  font-size: 10px;
+  color: #bbb;
+}
+
+.footer a {
+  color: #7F77DD;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ─── Inactive State ───────────────────────────────────────────── */
+body.inactive .cas-section,
+body.inactive .stats-section,
+body.inactive .sensing-section {
+  opacity: 0.4;
+  pointer-events: none;
+}

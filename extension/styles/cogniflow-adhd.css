@@ -1,0 +1,68 @@
+html.cogniflow-adhd body > *:not(main):not(article):not([role="main"]):not(script):not(style):not(link):not(.cogniflow-disclosure-wrapper) {
+  opacity: 0.3 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+html.cogniflow-adhd body > *:not(main):not(article):not([role="main"]):not(script):not(style):not(link):hover {
+  opacity: 1 !important;
+}
+
+/* Keep main content fully visible */
+html.cogniflow-adhd main,
+html.cogniflow-adhd article,
+html.cogniflow-adhd [role="main"] {
+  opacity: 1 !important;
+}
+
+html.cogniflow-adhd *[style*="animation-iteration-count: infinite"],
+html.cogniflow-adhd *[class*="marquee"],
+html.cogniflow-adhd *[class*="ticker"],
+html.cogniflow-adhd *[class*="carousel"]:not(main *),
+html.cogniflow-adhd *[class*="slider"]:not(main *) {
+  animation: none !important;
+  transition: none !important;
+}
+
+html.cogniflow-adhd *[class*="badge"],
+html.cogniflow-adhd *[class*="notification-count"],
+html.cogniflow-adhd *[class*="unread"] {
+  animation: none !important;
+  opacity: 0.5 !important;
+}
+
+html.cogniflow-adhd main p,
+html.cogniflow-adhd article p,
+html.cogniflow-adhd [role="main"] p {
+  max-width: 70ch !important;
+  line-height: 1.8 !important;
+  margin-bottom: 1.2em !important;
+}
+
+html.cogniflow-adhd main p:hover,
+html.cogniflow-adhd article p:hover {
+  background: rgba(127, 119, 221, 0.05) !important;
+  border-radius: 4px !important;
+  padding-left: 8px !important;
+  margin-left: -8px !important;
+  border-left: 2px solid rgba(127, 119, 221, 0.3) !important;
+}
+
+html.cogniflow-adhd [class*="related"],
+html.cogniflow-adhd [class*="recommended"],
+html.cogniflow-adhd [class*="trending"],
+html.cogniflow-adhd [class*="popular"],
+html.cogniflow-adhd [class*="you-may-also"],
+html.cogniflow-adhd [class*="more-stories"] {
+  display: none !important;
+}
+
+html.cogniflow-adhd footer {
+  opacity: 0.2 !important;
+  max-height: 100px !important;
+  overflow: hidden !important;
+}
+
+html.cogniflow-adhd footer:hover {
+  opacity: 1 !important;
+  max-height: none !important;
+}

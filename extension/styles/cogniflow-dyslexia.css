@@ -1,0 +1,117 @@
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/woff/OpenDyslexic-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/woff/OpenDyslexic-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html.cogniflow-dyslexia main,
+html.cogniflow-dyslexia article,
+html.cogniflow-dyslexia [role="main"],
+html.cogniflow-dyslexia .content {
+  font-family: 'OpenDyslexic', -apple-system, 'Segoe UI', Verdana, sans-serif !important;
+}
+
+html.cogniflow-dyslexia main p,
+html.cogniflow-dyslexia article p,
+html.cogniflow-dyslexia [role="main"] p,
+html.cogniflow-dyslexia main li,
+html.cogniflow-dyslexia article li {
+  font-size: 1.1rem !important;
+  line-height: 2.0 !important;        
+  letter-spacing: 0.05em !important;    
+  word-spacing: 0.12em !important;      
+  text-align: left !important;          
+  max-width: 60ch !important;           
+  margin-bottom: 1.5em !important;      
+}
+
+html.cogniflow-dyslexia main h1,
+html.cogniflow-dyslexia main h2,
+html.cogniflow-dyslexia main h3,
+html.cogniflow-dyslexia main h4,
+html.cogniflow-dyslexia article h1,
+html.cogniflow-dyslexia article h2,
+html.cogniflow-dyslexia article h3,
+html.cogniflow-dyslexia article h4 {
+  font-family: 'OpenDyslexic', -apple-system, 'Segoe UI', Verdana, sans-serif !important;
+  letter-spacing: 0.03em !important;
+  line-height: 1.4 !important;
+  margin-bottom: 0.8em !important;
+}
+
+html.cogniflow-dyslexia a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 3px !important;
+}
+
+html.cogniflow-dyslexia main p:hover,
+html.cogniflow-dyslexia article p:hover {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(216, 90, 48, 0.04) 0%,
+    rgba(216, 90, 48, 0.04) 100%
+  ) !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  margin-left: -8px !important;
+  margin-right: -8px !important;
+}
+
+html.cogniflow-dyslexia table {
+  border-collapse: separate !important;
+  border-spacing: 0 4px !important;
+}
+
+html.cogniflow-dyslexia td,
+html.cogniflow-dyslexia th {
+  padding: 10px 14px !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0.03em !important;
+}
+
+html.cogniflow-dyslexia tr:nth-child(even) {
+  background: rgba(216, 90, 48, 0.04) !important;
+}
+
+html.cogniflow-dyslexia pre,
+html.cogniflow-dyslexia code {
+  letter-spacing: 0.04em !important;
+  line-height: 1.8 !important;
+  font-size: 0.95rem !important;
+}
+
+html.cogniflow-dyslexia input,
+html.cogniflow-dyslexia textarea,
+html.cogniflow-dyslexia select {
+  font-family: 'OpenDyslexic', -apple-system, 'Segoe UI', Verdana, sans-serif !important;
+  font-size: 1rem !important;
+  padding: 10px 12px !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0.03em !important;
+}
+
+html.cogniflow-dyslexia main em,
+html.cogniflow-dyslexia main i,
+html.cogniflow-dyslexia article em,
+html.cogniflow-dyslexia article i {
+  font-style: normal !important;
+  font-weight: 700 !important;
+}
+
+html.cogniflow-dyslexia *[style*="text-transform: uppercase"],
+html.cogniflow-dyslexia *[style*="TEXT-TRANSFORM: UPPERCASE"] {
+  text-transform: none !important;
+}

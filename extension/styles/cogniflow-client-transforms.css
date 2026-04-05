@@ -1,0 +1,133 @@
+.cogniflow-jargon {
+  border-bottom: 1.5px dotted rgba(127, 119, 221, 0.5);
+  cursor: help;
+  position: relative;
+  transition: border-color 0.15s;
+}
+
+.cogniflow-jargon:hover,
+.cogniflow-jargon:focus {
+  border-bottom-color: #7F77DD;
+  background: rgba(127, 119, 221, 0.06);
+  border-radius: 2px;
+  outline: none;
+}
+
+.cogniflow-jargon:hover::after,
+.cogniflow-jargon:focus::after {
+  content: attr(data-definition);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 10px;
+  background: #2C2C2A;
+  color: #F1EFE8;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 6px;
+  white-space: nowrap;
+  max-width: 280px;
+  white-space: normal;
+  z-index: 10000;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cogniflow-jargon:hover::before,
+.cogniflow-jargon:focus::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: #2C2C2A;
+  z-index: 10001;
+  pointer-events: none;
+}
+
+html.cogniflow-autism .cogniflow-jargon {
+  border-bottom-color: rgba(29, 158, 117, 0.4);
+}
+
+html.cogniflow-autism .cogniflow-jargon:hover {
+  border-bottom-color: #1D9E75;
+  background: rgba(29, 158, 117, 0.06);
+}
+
+html.cogniflow-dyslexia .cogniflow-jargon {
+  border-bottom-color: rgba(216, 90, 48, 0.4);
+  border-bottom-width: 2px;
+}
+
+html.cogniflow-dyslexia .cogniflow-jargon:hover {
+  border-bottom-color: #D85A30;
+  background: rgba(216, 90, 48, 0.06);
+}
+
+.cogniflow-client-transform {
+  position: relative;
+}
+
+.cogniflow-chunk {
+  margin-bottom: 0.8em !important;
+  padding-bottom: 0.6em !important;
+  border-bottom: 1px solid rgba(127, 119, 221, 0.06);
+}
+
+.cogniflow-chunk:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.cogniflow-simplify-btn {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #7F77DD;
+  background: rgba(127, 119, 221, 0.06);
+  border: 1px solid rgba(127, 119, 221, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.4;
+}
+
+.cogniflow-simplify-btn:hover {
+  background: rgba(127, 119, 221, 0.12);
+  border-color: rgba(127, 119, 221, 0.4);
+}
+
+.cogniflow-simplify-btn:active {
+  transform: scale(0.97);
+}
+
+.cogniflow-simplify-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.cogniflow-simplify-loading {
+  color: #999;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+html.cogniflow-autism .cogniflow-simplify-btn {
+  color: #1D9E75;
+  background: rgba(29, 158, 117, 0.06);
+  border-color: rgba(29, 158, 117, 0.2);
+}
+
+html.cogniflow-dyslexia .cogniflow-simplify-btn {
+  color: #D85A30;
+  background: rgba(216, 90, 48, 0.06);
+  border-color: rgba(216, 90, 48, 0.2);
+  font-size: 12px;
+  padding: 4px 12px;
+}
