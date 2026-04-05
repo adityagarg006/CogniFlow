@@ -7,18 +7,18 @@
   </defs>
 
   <rect x="260" y="15" width="380" height="55" rx="15" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="1"/>
-  <text x="450" y="45" text-anchor="middle" font-size="16" font-weight="700" fill="#1F2937">Hybrid scorer flags n paragraphs</text>
+  <text x="450" y="45" text-anchor="middle" font-size="16" font-weight="700" fill="#1F2937">Hybrid scorer flags 29 paragraphs</text>
 
   <line x1="450" y1="70" x2="450" y2="102" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#a)"/>
 
   <rect x="210" y="107" width="480" height="52" rx="10" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
   <text x="450" y="128" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E">Sort by composite score (hardest first)</text>
-  <text x="450" y="147" text-anchor="middle" font-size="11" fill="#B45309">Split at position MAX_AUTO_SIMPLIFY = k</text>
+  <text x="450" y="147" text-anchor="middle" font-size="11" fill="#B45309">Split at position MAX_AUTO_SIMPLIFY = 5</text>
 
   <path d="M310 159 L140 159 L140 210" fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#a)"/>
   <path d="M590 159 L760 159 L760 210" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="195" y="186" font-size="11" fill="#6B7280">Positions k to n</text>
-  <text x="620" y="186" font-size="11" fill="#6B7280">Positions 1 to k</text>
+  <text x="195" y="186" font-size="11" fill="#6B7280">Positions 6 to 29</text>
+  <text x="620" y="186" font-size="11" fill="#6B7280">Positions 1 to 5</text>
 
   <rect x="25" y="215" width="380" height="350" rx="14" fill="#F0FDF4" stroke="#059669" stroke-width="1.2" stroke-dasharray="6 3"/>
   <text x="215" y="242" text-anchor="middle" font-size="16" font-weight="700" fill="#065F46">Tier A: client-side</text>

@@ -36,7 +36,7 @@ CogniFlow introduces **Cognitive Accessibility (CAS)** as a measurable, per-elem
 ## Project Structure
 
 ```
-cogni-flow/
+CogniFlow/
 ├── extension/                          # Chrome Extension (Manifest V3)
 │   ├── manifest.json                  
 │   ├── background/
@@ -45,14 +45,14 @@ cogni-flow/
 │   │   ├── main.js                     
 │   │   ├── sensing-layer.js           
 │   │   ├── element-scorer.js           
-│   │   ├── client-transforms.js       
+│   │   ├── client-transforms.js  
+│   │   ├── hybrid-scorer.js       
 │   │   ├── dom-transformer.js          
 │   │   ├── progressive-disclosure.js  
 │   │   └── learning-layer.js           
 │   ├── utils/
 │   │   ├── constants.js              
 │   │   ├── flesch-kincaid.js         
-│   │   ├── hybrid-scorer.js           
 │   │   └── dom-helpers.js            
 │   ├── styles/
 │   │   ├── cogniflow-core.css         
@@ -70,11 +70,11 @@ cogni-flow/
     ├── server.py                      
     ├── config.py                       
     ├── models.py                      
+    ├── cache.py                      
     ├── requirements.txt               
-    ├── agents/
-    │   └── pipeline.py                
-    └── cache/
-        └── cache_layer.py              
+    └── agents/
+        └── pipeline.py                
+           
  
 ```
 

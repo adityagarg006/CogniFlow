@@ -1,37 +1,15 @@
-# CogniFlow Backend Dependencies
-# ================================
-# DECISION: Using Anthropic Claude API via LangGraph for orchestration.
-# WHY NOT a custom model:
-#   - Training a custom simplification model requires 100K+ parallel corpus pairs
-#   - Fine-tuning still needs ~10K pairs minimum
-#   - Claude excels at text simplification with zero-shot prompting
-#   - Factual preservation is critical — LLMs with instruction following are better
-#   - Time-to-MVP: weeks vs months
-#
-# WHY LangGraph:
-#   - Multi-agent routing (simplifier vs summarizer vs tone filter)
-#   - Built-in retry/fallback logic
-#   - State management across agent pipeline
-#   - Easy to add new agents later
-
 fastapi==0.115.6
 uvicorn[standard]==0.34.0
 pydantic==2.10.3
 python-dotenv==1.0.1
 
-# AI Orchestration
-langgraph
-# langchain-anthropic==0.3.3
-langchain-core
 
-# Caching & Performance
+langgraph
+langchain-core
+langchain-groq
+
 diskcache==5.6.3
 
-# Text analysis (server-side FK validation)
 textstat==0.7.4
-
-# CORS
 starlette==0.41.3
-
-# Async HTTP
 httpx==0.28.1
