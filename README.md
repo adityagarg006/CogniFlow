@@ -231,7 +231,7 @@ Handles **Tier A** (client-side text intervention with zero API calls) and the *
 3. **Visual chunking** (ADHD only) - inserts visual spacing every 2–3 sentences for scanability
 4. **"Simplify this" button** - pill-shaped button on every Tier A paragraph for on-demand AI simplification
 
-<!-->
+<!--
 **Request queue state machine:**
 
 <p align="center">
