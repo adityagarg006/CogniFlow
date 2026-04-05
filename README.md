@@ -143,7 +143,7 @@ Each signal contributes 0–0.3 to a final 0–1 score per condition. The sensin
 
 ---
 
-### Hybrid Complexity Scorer (`hybrid-scorer.js` — 317 lines)
+### Hybrid Complexity Scorer 
 
 Replaced pure Flesch-Kincaid scoring with a **three-signal composite** that catches what FK alone misses.
 
