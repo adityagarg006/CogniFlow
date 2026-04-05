@@ -357,8 +357,6 @@ All tunable values live in `extension/utils/constants.js`:
 ---
 -->
 
-## Scorer Validation Results
-
 
 ## License
 
