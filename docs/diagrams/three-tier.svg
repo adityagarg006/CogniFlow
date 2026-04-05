@@ -1,0 +1,58 @@
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="250" y="10" width="400" height="50" rx="8" fill="#F3F4F6" stroke="#6B7280" stroke-width="0.8"/>
+  <text x="450" y="32" text-anchor="middle" font-size="12" font-weight="600" fill="#374151">30 paragraphs flagged on a Wikipedia article</text>
+  <text x="450" y="50" text-anchor="middle" font-size="10" fill="#6B7280">Sorted by hybrid composite score (hardest first)</text>
+
+  <line x1="450" y1="60" x2="450" y2="85" stroke="#6B7280" stroke-width="1" marker-end="url(#a)"/>
+
+  <rect x="250" y="90" width="400" height="38" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="0.8"/>
+  <text x="450" y="114" text-anchor="middle" font-size="12" font-weight="600" fill="#92400E">Split at MAX_AUTO_SIMPLIFY = 5</text>
+
+  <line x1="350" y1="128" x2="160" y2="165" stroke="#10B981" stroke-width="1.2" marker-end="url(#a)"/>
+  <line x1="550" y1="128" x2="740" y2="165" stroke="#EF4444" stroke-width="1.2" marker-end="url(#a)"/>
+  <text x="225" y="147" font-size="10" fill="#6B7280">positions 6–30</text>
+  <text x="615" y="147" font-size="10" fill="#6B7280">positions 1–5</text>
+
+  <rect x="30" y="170" width="310" height="220" rx="12" fill="#D1FAE5" stroke="#10B981" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="185" y="198" text-anchor="middle" font-size="14" font-weight="700" fill="#065F46">Tier A: Client-side (25 paragraphs)</text>
+  <text x="185" y="218" text-anchor="middle" font-size="11" font-weight="600" fill="#059669">0 API calls | &lt;2ms per element</text>
+
+  <rect x="50" y="235" width="270" height="28" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="0.5"/>
+  <text x="185" y="254" text-anchor="middle" font-size="10" fill="#047857">Sentence splitting at conjunctions (and, which, but...)</text>
+
+  <rect x="50" y="270" width="270" height="28" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="0.5"/>
+  <text x="185" y="289" text-anchor="middle" font-size="10" fill="#047857">Jargon tooltips from 500-term local dictionary</text>
+
+  <rect x="50" y="305" width="270" height="28" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="0.5"/>
+  <text x="185" y="324" text-anchor="middle" font-size="10" fill="#047857">Visual chunking — breathing room every 2-3 sentences</text>
+
+  <rect x="50" y="340" width="270" height="28" rx="6" fill="#EDE9FE" stroke="#7C3AED" stroke-width="0.5"/>
+  <text x="185" y="359" text-anchor="middle" font-size="10" fill="#5B21B6">"Simplify this" button → Tier C on-demand</text>
+
+  <rect x="560" y="170" width="310" height="220" rx="12" fill="#FEE2E2" stroke="#EF4444" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="715" y="198" text-anchor="middle" font-size="14" font-weight="700" fill="#7F1D1D">Tier B: Server AI (5 paragraphs)</text>
+  <text x="715" y="218" text-anchor="middle" font-size="11" font-weight="600" fill="#991B1B">Hard-capped | Batched REST</text>
+
+  <rect x="580" y="235" width="270" height="28" rx="6" fill="#FEF2F2" stroke="#EF4444" stroke-width="0.5"/>
+  <text x="715" y="254" text-anchor="middle" font-size="10" fill="#991B1B">Full LLM rewrite to target grade level</text>
+
+  <rect x="580" y="270" width="270" height="28" rx="6" fill="#FEF2F2" stroke="#EF4444" stroke-width="0.5"/>
+  <text x="715" y="289" text-anchor="middle" font-size="10" fill="#991B1B">TL;DR generation (ADHD profile only)</text>
+
+  <rect x="580" y="305" width="270" height="28" rx="6" fill="#F3F4F6" stroke="#6B7280" stroke-width="0.5"/>
+  <text x="715" y="324" text-anchor="middle" font-size="10" fill="#374151">Tone analysis (rule-based, 0 API)</text>
+
+  <rect x="580" y="340" width="270" height="28" rx="6" fill="#D1FAE5" stroke="#10B981" stroke-width="0.5"/>
+  <text x="715" y="359" text-anchor="middle" font-size="10" fill="#065F46">Progressive Disclosure wrapper</text>
+
+  <rect x="150" y="420" width="600" height="65" rx="10" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1"/>
+  <text x="450" y="445" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Scalability: 70% of work on client → backend only handles top 5</text>
+  <text x="450" y="465" text-anchor="middle" font-size="10" fill="#6B7280">Backend is stateless REST — swap API for self-hosted model on dedicated hardware without any client changes</text>
+  <text x="450" y="480" text-anchor="middle" font-size="10" fill="#6B7280">Cache (SHA256 content-hash, 24hr TTL) eliminates repeat processing of identical text across all users</text>
+</svg>
