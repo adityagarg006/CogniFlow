@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">CogniFlow — Cognitive Accessibility Engine</h1>
+  <h1 align="center">CogniFlow - Cognitive Accessibility Engine</h1>
   <p align="center">
     <em>An AI-powered browser extension that adapts the web to how your brain works.</em>
   </p>
@@ -19,7 +19,7 @@ Most digital platforms are built for neurotypical users. Cluttered layouts, intr
 
 ## What CogniFlow Does Differently
 
-CogniFlow introduces **Cognitive Accessibility (CAS)** as a measurable, per-element metric. Instead of asking users to self-diagnose, it **observes how they struggle** and adapts in real time — per paragraph, per page, evolving with every session.
+CogniFlow introduces **Cognitive Accessibility (CAS)** as a measurable, per-element metric. Instead of asking users to self-diagnose, it **observes how they struggle** and adapts in real time - per paragraph, per page, evolving with every session.
 
 | Feature | Reader Mode / Helperbird | CogniFlow |
 |---------|--------------------------|-----------|
@@ -139,13 +139,13 @@ Autism signal  = f(high_hesitation, low_scroll_speed, avoidance, controlled_move
 Dyslexia signal = f(high_reversals, slow_scrolling, high_hesitation, mouse_tracking)
 ```
 
-Each signal contributes 0–0.3 to a final 0–1 score per condition. The sensing layer needs ~30 seconds of browsing to produce meaningful signals. **All data stays entirely client-side** — only the derived weights (three numbers between 0 and 1) accompany text batches sent to the backend.
+Each signal contributes 0–0.3 to a final 0–1 score per condition. The sensing layer needs ~30 seconds of browsing to produce meaningful signals. **All data stays entirely client-side** - only the derived weights (three numbers between 0 and 1) accompany text batches sent to the backend.
 
 ---
 
 ### Hybrid Complexity Scorer 
 
-Replaced pure Flesch-Kincaid scoring with a **three-signal composite** that catches what FK alone misses.
+The algorithm uses **three-signal composite** that catches everything from long sentences to confusing sentences.
 
 <p align="center">
   <img src="docs/diagrams/hybrid-scorer.svg" alt="Hybrid Scorer Pipeline" width="100%">
@@ -168,7 +168,7 @@ C = 0.40 × S_FK + 0.35 × S_jargon + 0.25 × S_structural
 - ADHD: > 0.35 (moderate)
 - Autism: > 0.45 (sensory-focused : text intervention is secondary)
 
-<!--**Why three signals?** The academic abstract `"The epistemological implications of quantum decoherence necessitate..."` scores 0.00 on structural complexity (two well-formed sentences) but 1.00 on both FK and jargon. A single signal would miss it — the three-signal design catches 90%+ of genuinely complex text. -->
+<!--**Why three signals?** The academic abstract `"The epistemological implications of quantum decoherence necessitate..."` scores 0.00 on structural complexity (two well-formed sentences) but 1.00 on both FK and jargon. A single signal would miss it - the three-signal design catches 90%+ of genuinely complex text. -->
 
 ---
 
@@ -203,7 +203,7 @@ Four dimensions, each 0-100, weighted by profile:
 
 ### DOM Transformer 
 
-Applies immediate visual fixes. **Key constraint: never removes elements** — only hides via `data-cogniflow-*` attributes so site functionality is preserved and changes can be cleanly reverted.
+Applies immediate visual fixes. **Key constraint: never removes elements** - only hides via `data-cogniflow-*` attributes so site functionality is preserved and changes can be cleanly reverted.
 
 **Actions by flag type:**
 
@@ -228,15 +228,16 @@ Handles **Tier A** (client-side text intervention with zero API calls) and the *
 
 1. **Sentence splitting** : breaks sentences >25 words at conjunction points (`which`, `however`, `although`, `whereas`) into shorter independent sentences
 2. **Jargon tooltips** : wraps domain-specific words in `<span>` elements with hoverable plain-English definitions from a 500-term inline dictionary organized by domain (science, legal, tech, medicine, finance)
-3. **Visual chunking** (ADHD only) — inserts visual spacing every 2–3 sentences for scanability
-4. **"Simplify this" button** — pill-shaped button on every Tier A paragraph for on-demand AI simplification
+3. **Visual chunking** (ADHD only) - inserts visual spacing every 2–3 sentences for scanability
+4. **"Simplify this" button** - pill-shaped button on every Tier A paragraph for on-demand AI simplification
 
+<!-->
 **Request queue state machine:**
 
 <p align="center">
   <img src="docs/diagrams/request-queue.svg" alt="Request Queue State Machine" width="100%">
 </p>
-
+-->
 Three states: `IDLE` (buttons enabled), `TIER_B_PROCESSING` (all buttons show "Waiting...", pulsing animation), `USER_REQUEST` (active button shows "Simplifying...", others show "Queued..."). Guarantees **max 1 concurrent API call** at all times, causing no server flood possible.
 
 
@@ -274,7 +275,7 @@ Evolves per-domain simplification preferences across sessions without explicit u
 - Older interactions decay by 5% per day to prevent stale preferences
 
 ---
-
+<!--
 ### DOM Helpers
 
 The engine underneath all other modules. Three critical functions:
@@ -286,6 +287,7 @@ The engine underneath all other modules. Three critical functions:
 **`_cleanTextContent()`** : TreeWalker-based text extraction that skips `<style>`, `<script>`, and `aria-hidden` subtrees. Prevents inline CSS rules from being flattened into visible text (real bug on Wikipedia's shortcut boxes).
 
 ---
+-->
 
 ### Backend Pipeline
 
@@ -299,6 +301,7 @@ LangGraph multi-agent orchestration with three sequential agents:
 
 **Content-hash caching:** Key = `SHA256(text + sorted_profiles)`. Same paragraph across all users hits cache after first processing. Disk-backed via `diskcache` (LRU, 500MB cap, 24hr TTL).
 
+<!--
 ---
 
 ## Three-Tier Intervention Pyramid
@@ -316,13 +319,13 @@ This is the core architectural decision: **not every complex paragraph needs an 
 The hard cap (`MAX_AUTO_SIMPLIFY = 5` in `constants.js`) guarantees bounded server load per page regardless of article length.
 
 ---
-
+-->
 ## Scalability Architecture
 
 CogniFlow is designed so that **~95% of all computation happens in the user's browser**. The backend is a thin, stateless REST service that:
 
 1. Only receives the top 5 hardest paragraphs per page (not the full article)
-2. Caches results by content hash — identical paragraphs across all users are processed once
+2. Caches results by content hash - identical paragraphs across all users are processed once
 3. Can be horizontally scaled by adding more stateless instances behind a load balancer
 4. **Can be replaced with a self-hosted model** (quantized Llama, Qwen, Mistral via llama.cpp/vLLM) on dedicated GPU hardware - the client communicates via the same REST interface, zero client-side changes needed
 
