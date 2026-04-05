@@ -13,6 +13,10 @@
 
 ---
 
+
+https://github.com/user-attachments/assets/80756b18-dd80-4c74-b9a9-bcc0876b8f3e
+
+
 ## The Problem
 
 Most digital platforms are built for neurotypical users. Cluttered layouts, intrusive pop-ups, autoplay media, and dense academic prose create real barriers for the **1 in 5 people** with ADHD, Autism, or Dyslexia. Existing tools like Reader Mode or Helperbird offer static, one-size-fits-all transformations - a single toggle that either strips everything or changes nothing.
