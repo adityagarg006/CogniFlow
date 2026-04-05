@@ -13,9 +13,10 @@
 
 ---
 
-
+## 🎥 Demo Video
+<div style="width:50%;">
 https://github.com/user-attachments/assets/80756b18-dd80-4c74-b9a9-bcc0876b8f3e
-
+</div>
 
 ## The Problem
 
