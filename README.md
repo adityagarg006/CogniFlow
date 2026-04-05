@@ -14,7 +14,10 @@
 ---
 
 ## 🎥 Demo Video
-https://github.com/user-attachments/assets/80756b18-dd80-4c74-b9a9-bcc0876b8f3e
+
+
+https://github.com/user-attachments/assets/6af172f1-4fca-4d7f-b8c7-5dd7be951582
+
 
 ## The Problem
 
