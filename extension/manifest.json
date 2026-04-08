@@ -22,9 +22,9 @@
       "js": [
         "utils/constants.js",
         "utils/flesch-kincaid.js",
-        "utils/hybrid-scorer.js",
         "utils/dom-helpers.js",
         "content/sensing-layer.js",
+        "content/hybrid-scorer.js",
         "content/client-transforms.js",
         "content/element-scorer.js",
         "content/dom-transformer.js",
