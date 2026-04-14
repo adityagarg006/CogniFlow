@@ -1,7 +1,13 @@
+/**
+ * CogniFlow Popup Controller
+ * ===========================
+ * Handles UI interactions and communicates with content scripts + storage.
+ */
 
 (function () {
   "use strict";
 
+  // ─── DOM References ─────────────────────────────────────────────
   const powerBtn = document.getElementById("power-btn");
   const casBefore = document.getElementById("cas-before");
   const casAfter = document.getElementById("cas-after");
@@ -14,9 +20,11 @@
   const revertLink = document.getElementById("revert-link");
   const profileCheckboxes = document.querySelectorAll('input[name="profile"]');
 
+  // ─── State ──────────────────────────────────────────────────────
   let isActive = false;
   let currentProfiles = [];
 
+  // ─── Initialize ─────────────────────────────────────────────────
   async function init() {
     // Load saved settings
     const settings = await new Promise(resolve => {
@@ -38,6 +46,7 @@
     // Set profile checkboxes
     profileCheckboxes.forEach(cb => {
       cb.checked = currentProfiles.includes(cb.value);
+      // Set CSS variable for accent color
       const card = cb.closest(".profile-card");
       if (cb.value === "adhd") card.style.setProperty("--accent", "#7F77DD");
       if (cb.value === "autism") card.style.setProperty("--accent", "#1D9E75");
@@ -47,6 +56,7 @@
     // Get current tab status
     requestStatus();
 
+    // Poll for updates
     setInterval(requestStatus, 2000);
   }
 
@@ -86,10 +96,11 @@
       }
     }
 
-    // Sensing data
+    // Sensing data (observational only — does NOT override manual profile selection)
     if (data.sensing) {
       const s = data.sensing;
       sensingData.innerHTML = `
+        <div class="sensing-header" style="font-size:10px;color:#888;margin-bottom:4px;font-style:italic;">Behavioral signals (observational — your selected profile is what drives changes)</div>
         <div class="sensing-grid">
           <div class="sensing-item">
             <span class="sensing-item-label">ADHD signal</span>
@@ -132,15 +143,19 @@
       cogniflow_backend_url: backendUrlInput.value
     });
 
-    // Notify content script
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      if (!tabs[0]) return;
-      chrome.tabs.sendMessage(tabs[0].id, {
-        type: "SET_PROFILES",
-        profiles: currentProfiles,
-        backendUrl: backendUrlInput.value
-      }).catch(() => {});
-    });
+    // Only send profiles to content script if power is ON.
+    // If power is OFF, don't send SET_PROFILES at all — the power button
+    // handler already sent REVERT_ALL or TOGGLE_ACTIVE.
+    if (isActive) {
+      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        if (!tabs[0]) return;
+        chrome.tabs.sendMessage(tabs[0].id, {
+          type: "SET_PROFILES",
+          profiles: currentProfiles,
+          backendUrl: backendUrlInput.value
+        }).catch(() => {});
+      });
+    }
   }
 
   // ─── Event Listeners ───────────────────────────────────────────
@@ -149,16 +164,28 @@
     powerBtn.classList.toggle("active", isActive);
     document.body.classList.toggle("inactive", !isActive);
 
-    if (!isActive) {
-      // Revert all changes
-      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        if (tabs[0]) {
-          chrome.tabs.sendMessage(tabs[0].id, { type: "REVERT_ALL" }).catch(() => {});
-        }
-      });
-    }
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      if (!tabs[0]) return;
 
-    saveAndApply();
+      if (!isActive) {
+        // Power OFF: deactivate everything
+        chrome.tabs.sendMessage(tabs[0].id, { type: "REVERT_ALL" }).catch(() => {});
+      } else {
+        // Power ON: activate with current profiles
+        chrome.tabs.sendMessage(tabs[0].id, {
+          type: "SET_PROFILES",
+          profiles: Array.from(profileCheckboxes).filter(cb => cb.checked).map(cb => cb.value),
+          backendUrl: backendUrlInput.value
+        }).catch(() => {});
+      }
+    });
+
+    // Save state (but don't send SET_PROFILES again — handled above)
+    chrome.storage.local.set({
+      cogniflow_active: isActive,
+      cogniflow_profiles: currentProfiles,
+      cogniflow_backend_url: backendUrlInput.value
+    });
   });
 
   profileCheckboxes.forEach(cb => {
@@ -190,5 +217,6 @@
     statSimplified.textContent = "0";
   });
 
+  // ─── Init ───────────────────────────────────────────────────────
   init();
 })();
